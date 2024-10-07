@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:workout_mobile_app/components/auth_scaffold.dart';
+import 'package:workout_mobile_app/components/common/layout.dart';
 import 'package:workout_mobile_app/components/register/register.dart';
 import 'package:workout_mobile_app/screens/login.dart';
 import 'package:workout_mobile_app/components/common/common.dart';
+import 'package:workout_mobile_app/utils/navigation.dart';
 
 class Register extends StatefulWidget {
   const Register({super.key});
@@ -25,12 +27,17 @@ class _RegisterState extends State<Register> {
     });
   }
 
-  void handleSubmit() {
-    print("hello sign up");
-  }
+  // void handleSubmit() {
+  //   print("hello sign up");
+  // }
 
   @override
   Widget build(BuildContext context) {
+    void handleSubmit() {
+      print("hello");
+      navigateTo(context, const Layout());
+    }
+
     return ReusableScaffold(
       body: SingleChildScrollView(
         child: Form(
