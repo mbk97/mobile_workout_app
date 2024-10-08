@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:workout_mobile_app/components/exercises/categories_card.dart';
+import 'package:workout_mobile_app/components/exercises/index.dart';
 
 class Exercises extends StatefulWidget {
   const Exercises({super.key});
@@ -8,6 +10,9 @@ class Exercises extends StatefulWidget {
 }
 
 class _ExercisesState extends State<Exercises> {
+  // Initialize progress to a value between 0.0 and 1.0
+  double progress = 0.65; // Example progress value: 75%
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,33 +21,14 @@ class _ExercisesState extends State<Exercises> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 70,
-            ),
-            // const Text(
-            //   "Exercises",
-            //   style: TextStyle(fontWeight: FontWeight.w800, fontSize: 25),
-            // ),
-            const SizedBox(
-              height: 20,
-            ),
-            Row(
-              children: [
-                Image.asset('assets/images/user.png'),
-                const SizedBox(
-                  width: 10,
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Welcome back!!!"),
-                    Text("Mr Fugazi",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w700, fontSize: 18))
-                  ],
-                )
-              ],
-            )
+            const SizedBox(height: 70),
+            userDetails(),
+            const SizedBox(height: 30),
+            workoutProgress(progress),
+            const SizedBox(height: 50),
+            workoutCardDetails(),
+            const SizedBox(height: 50),
+            categories()
           ],
         ),
       ),
