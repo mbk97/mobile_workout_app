@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:workout_mobile_app/components/exercises/categories_card.dart';
-import 'package:workout_mobile_app/components/exercises/index.dart';
 
 class Exercises extends StatefulWidget {
   const Exercises({super.key});
@@ -10,27 +8,39 @@ class Exercises extends StatefulWidget {
 }
 
 class _ExercisesState extends State<Exercises> {
-  // Initialize progress to a value between 0.0 and 1.0
-  double progress = 0.65; // Example progress value: 75%
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 70),
-            userDetails(),
-            const SizedBox(height: 30),
-            workoutProgress(progress),
-            const SizedBox(height: 50),
-            workoutCardDetails(),
-            const SizedBox(height: 50),
-            categories()
-          ],
-        ),
+    return const Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            height: 50,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 20, right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Select an exercise",
+                      style: TextStyle(fontSize: 15, color: Color(0XFF3EC25B)),
+                    ),
+                    Text(
+                      "Exercises",
+                      style:
+                          TextStyle(fontSize: 25, fontWeight: FontWeight.w900),
+                    ),
+                  ],
+                ),
+                Icon(Icons.search)
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
