@@ -45,7 +45,7 @@ class _LoginState extends State<Login> {
               children: [
                 buildBackButtonForLogin(context, () => const Welcome()),
                 const SizedBox(height: 40),
-                buildWelcomeText("Hi, Welcome Back", "Log in to your account"),
+                buildWelcomeText("Hi, Welcome Back", "Login to your account"),
                 const SizedBox(height: 40),
                 buildCustomEmailTextField(emailValue),
                 const SizedBox(height: 20),
